@@ -10,6 +10,10 @@ function getQuote() {
 }
 
 function createTweet(input) {
+    if ($.isArray(input) && !input.length === 0) {
+        return;
+    }
+
     var data = input[0];
     var quoteText = $(data.content).text().trim();
     var quoteAuthor = data.title;
